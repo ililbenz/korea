@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇰🇷 קוריאה 2027 - המסע שלנו</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Noto+Sans+KR:wght@400;700;900&family=Heebo:wght@300;400;500;700;900&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E03050;
+    --blue: #2E7DE6;
+    --pink: #F8A0A0;
+    --peach: #FBBFBF;
+    --cream: #F0F4FA;
+    --dark: #0B2559;
+    --gray: #5B6B8A;
+    --light-gray: #E8EDF5;
+    --yellow: #FCD34D;
+    --mint: #A7F3D0;
+    --lavender: #C4D4F0;
+    --coral: #F07070;
+    --navy: #0B2559;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FDE8E8 0%, #F0F4FA 50%, #DBEAFE 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--red) 0%, transparent 70%);
+    opacity: 0.15;
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--blue) 0%, transparent 70%);
+    opacity: 0.15;
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(30px, -30px) rotate(180deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-logo {
+    margin: 0 auto 2rem;
+    max-width: 280px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+  }
+
+  @media (max-width: 768px) {
+    .hero-logo {
+      max-width: 200px;
+    }
+  }
+
+  .hero h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--coral), var(--blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+  }
+
+  .hero .subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .hero .korean-text {
+    font-family: 'Gamja Flower', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--red);
+    margin: 1rem 0;
+  }
+
+  .hero .dates {
+    display: inline-block;
+    background: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .countdown {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .countdown-item {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    min-width: 80px;
+  }
+
+  .countdown-number {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 2rem;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .countdown-label {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.3rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gray);
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* Navigation */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(240, 244, 250, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .nav button {
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav button:hover {
+    background: white;
+    border-color: var(--red);
+    transform: translateY(-2px);
+  }
+
+  .nav button.active {
+    background: var(--red);
+    color: white;
+  }
+
+  /* Sections */
+  section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section h2 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    letter-spacing: -1px;
+  }
+
+  section .section-korean {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 2rem;
+  }
+
+  /* Overview Cards */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .overview-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .overview-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--accent-color, var(--pink));
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0.3;
+    transition: all 0.4s;
+  }
+
+  .overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  }
+
+  .overview-card:hover::before {
+    transform: translate(30%, -30%) scale(1.5);
+  }
+
+  .overview-card .emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .overview-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    color: var(--dark);
+  }
+
+  .overview-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+  }
+
+  /* Days Timeline */
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .day-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    transition: all 0.4s;
+    border-right: 6px solid var(--red);
+  }
+
+  .day-card:nth-child(2n) { border-right-color: var(--blue); }
+  .day-card:nth-child(3n) { border-right-color: var(--yellow); }
+  .day-card:nth-child(4n) { border-right-color: var(--mint); }
+
+  .day-card.jeju { border-right-color: #06B6D4; }
+
+  .day-card:hover {
+    transform: translateX(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  }
+
+  .day-header {
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,182,200,0.1) 100%);
+    user-select: none;
+  }
+
+  .day-number {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 3rem;
+    color: var(--red);
+    line-height: 1;
+    min-width: 80px;
+  }
+
+  .day-card:nth-child(2n) .day-number { color: var(--blue); }
+  .day-card:nth-child(3n) .day-number { color: #B45309; }
+  .day-card:nth-child(4n) .day-number { color: #059669; }
+  .day-card.jeju .day-number { color: #06B6D4; }
+
+  .day-title {
+    flex: 1;
+  }
+
+  .day-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    font-weight: 900;
+  }
+
+  .day-title .location {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+
+  .day-toggle {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+    color: var(--gray);
+  }
+
+  .day-card.open .day-toggle {
+    transform: rotate(180deg);
+  }
+
+  .day-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+
+  .day-card.open .day-content {
+    max-height: 5000px;
+    transition: max-height 0.8s ease-in;
+  }
+
+  .day-content-inner {
+    padding: 0 2rem 2rem;
+  }
+
+  .activity-block {
+    margin-bottom: 1.5rem;
+    padding-right: 1rem;
+    border-right: 3px solid var(--light-gray);
+  }
+
+  .activity-block h4 {
+    color: var(--red);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+  }
+
+  .day-card:nth-child(2n) .activity-block h4 { color: var(--blue); }
+
+  .activity-block p {
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .activity-block .tip {
+    background: var(--yellow);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+    color: var(--dark);
+    font-weight: 500;
+  }
+
+  .meals {
+    background: linear-gradient(135deg, #F0F4FA 0%, #E8EDF5 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .meals h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    font-weight: 900;
+  }
+
+  .meal-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    align-items: flex-start;
+  }
+
+  .meal-emoji {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .meal-text {
+    font-size: 0.95rem;
+  }
+
+  .meal-text strong {
+    color: var(--red);
+  }
+
+  /* Food Section */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .food-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .food-card:hover {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
+  .food-card .food-emoji {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .food-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    font-weight: 900;
+  }
+
+  .food-card .korean-name {
+    color: var(--red);
+    font-family: 'Gamja Flower', cursive;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .food-card p {
+    color: var(--dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .food-card .price {
+    display: inline-block;
+    background: var(--mint);
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  .food-card.warn { background: linear-gradient(135deg, #FEE2E2 0%, #FFF 100%); }
+  .food-card.warn .price { background: #FCA5A5; }
+
+  /* Prep Section */
+  .prep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .prep-item {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .prep-item .icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .prep-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 900;
+  }
+
+  .prep-item p {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+
+  /* Principles Section */
+  .principles {
+    background: linear-gradient(135deg, var(--lavender) 0%, var(--coral) 30%, var(--blue) 100%);
+    border-radius: 32px;
+    padding: 3rem;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .principles::before {
+    content: '✨';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 4rem;
+    opacity: 0.3;
+  }
+
+  .principles h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .principle-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .principle-list .principle {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .principle .num {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+  }
+
+  .principle p {
+    color: var(--dark);
+    font-size: 0.95rem;
+  }
+
+  /* Budget Section */
+  .budget-card {
+    background: linear-gradient(135deg, #DBEAFE 0%, var(--lavender) 100%);
+    border-radius: 24px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .budget-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+  }
+
+  .budget-row:last-child {
+    border-bottom: none;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+  }
+
+  .budget-row .amount {
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--dark);
+  }
+
+  /* Open Items */
+  .open-items {
+    background: linear-gradient(135deg, #FDE8E8 0%, #FBBFBF 100%);
+    border-radius: 24px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .open-items ol {
+    padding-right: 1.5rem;
+    color: var(--dark);
+  }
+
+  .open-items li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+  }
+
+  footer .korean-text {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 2rem;
+    color: var(--pink);
+    margin-bottom: 1rem;
+  }
+
+  footer p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 1.5rem;
+    }
+    
+    .day-header {
+      padding: 1.2rem 1.5rem;
+      gap: 1rem;
+    }
+    
+    .day-number {
+      font-size: 2.2rem;
+      min-width: 60px;
+    }
+    
+    .day-content-inner {
+      padding: 0 1.5rem 1.5rem;
+    }
+    
+    .principles {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  /* Floating Korean Decorations */
+  .floating-emoji {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatAround 30s linear infinite;
+  }
+
+  @keyframes floatAround {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(100px, -50px) rotate(90deg); }
+    50% { transform: translate(50px, 100px) rotate(180deg); }
+    75% { transform: translate(-50px, 50px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="/logo.png" alt="BZ❤K">
+    </div>
+    <h1>קוריאה<br>2027</h1>
+    <p class="korean-text">우리의 여행 ✈️</p>
+    <p class="subtitle">המסע המשפחתי הגדול שלנו</p>
+    <div class="dates">📅 פסח 2027 · 14 ימים נטו</div>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item">
+        <div class="countdown-number" id="days">--</div>
+        <div class="countdown-label">ימים</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number">7</div>
+        <div class="countdown-label">נפשות</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number">2</div>
+        <div class="countdown-label">ערים</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number">∞</div>
+        <div class="countdown-label">כיף</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">גלגלי למטה ↓</div>
+</section>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button onclick="scrollToSection('overview')" class="active">סקירה</button>
+    <button onclick="scrollToSection('principles')">עקרונות</button>
+    <button onclick="scrollToSection('itinerary')">מסלול יומי</button>
+    <button onclick="scrollToSection('food')">אוכל</button>
+    <button onclick="scrollToSection('prep')">הכנות</button>
+    <button onclick="scrollToSection('budget')">תקציב</button>
+    <button onclick="scrollToSection('open')">פתוחים</button>
+  </div>
+</nav>
+
+<!-- Overview -->
+<section id="overview">
+  <h2>הסיפור שלנו</h2>
+  <p class="section-korean">한 눈에 보기 · במבט אחד</p>
+  
+  <div class="overview-grid">
+    <div class="overview-card" style="--accent-color: var(--pink);">
+      <span class="emoji">📍</span>
+      <h3>2 בסיסים בלבד</h3>
+      <p>סיאול 5 ימים → ג'ג'ו 6 ימים → סיאול 3 ימים. מינימום מעברים.</p>
+    </div>
+    <div class="overview-card" style="--accent-color: var(--mint);">
+      <span class="emoji">👨‍👩‍👧‍👦</span>
+      <h3>7 נפשות</h3>
+      <p>שתי אימהות + 5 ילדים (7.5, 9, 11.5, 11.5, 15.5) - 4 בנים ובת אחת.</p>
+    </div>
+    <div class="overview-card" style="--accent-color: var(--yellow);">
+      <span class="emoji">🎢</span>
+      <h3>פארק שעשועים</h3>
+      <p>Lotte World - הדיסנילנד הקוריאני. יום שלם של אדרנלין.</p>
+    </div>
+    <div class="overview-card" style="--accent-color: var(--lavender);">
+      <span class="emoji">🎵</span>
+      <h3>K-Pop Everywhere</h3>
+      <p>HiKR Ground, Hongdae, מופעי רחוב. הכל מה שהילדים מחכים לו.</p>
+    </div>
+    <div class="overview-card" style="--accent-color: #BAE6FD;">
+      <span class="emoji">🏝️</span>
+      <h3>אי ג'ג'ו</h3>
+      <p>6 ימים של טבע, ג'יפים, מערות לבה, וחופים טורקיז.</p>
+    </div>
+    <div class="overview-card" style="--accent-color: var(--peach);">
+      <span class="emoji">🍜</span>
+      <h3>אוכל קוריאני</h3>
+      <p>ראמן, ביבימבאפ, BBQ, וכל מה שיש בחנות נוחות.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Principles -->
+<section id="principles">
+  <div class="principles">
+    <h2>חוקי הברזל</h2>
+    <p style="font-family: 'Gamja Flower', cursive; font-size: 1.5rem; color: rgba(255,255,255,0.85);">규칙들 · הכללים שלנו</p>
+    
+    <div class="principle-list">
+      <div class="principle">
+        <span class="num">1</span>
+        <p><strong>ג'ט-לג כבד 3 ימים.</strong> בלי לוח זמנים בימים האלה. אם הם קמים ב-04:00 וקורסים ב-15:00 - זה בסדר.</p>
+      </div>
+      <div class="principle">
+        <span class="num">2</span>
+        <p><strong>שנ"צ בדירה זה לגיטימי.</strong> כל יום, אם צריך. הימים בנויים גמישים.</p>
+      </div>
+      <div class="principle">
+        <span class="num">3</span>
+        <p><strong>חנות נוחות = ארוחה.</strong> במיוחד בימים הראשונים. ראמן + ספה = ניצחון.</p>
+      </div>
+      <div class="principle">
+        <span class="num">4</span>
+        <p><strong>וואו לפני תרבות.</strong> K-pop ו-Lotte קודם, ארמונות אחרי.</p>
+      </div>
+      <div class="principle">
+        <span class="num">5</span>
+        <p><strong>אין סיורים באנגלית לקטנים.</strong> הילדים לא דוברים. רק לגדולים, או ויזואלי בלי מדריך.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Itinerary -->
+<section id="itinerary">
+  <h2>המסלול היומי</h2>
+  <p class="section-korean">일일 일정 · יום אחרי יום</p>
+
+  <div class="timeline" id="timeline">
+    <!-- Days will be generated by JS -->
+  </div>
+</section>
+
+<!-- Food Section -->
+<section id="food">
+  <h2>מדריך האוכל</h2>
+  <p class="section-korean">한국 음식 · אוכל קוריאני</p>
+  
+  <h3 style="margin-top: 2rem; font-size: 1.5rem; font-weight: 900;">💚 בטוח לילדים בררנים</h3>
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-emoji">🍙</div>
+      <h4>Gimbap</h4>
+      <p class="korean-name">김밥</p>
+      <p>"סושי קוריאני". רולים של אורז עם ירקות, ביצה, בולגוגי. אין דג נא. הילדים יאהבו.</p>
+      <span class="price">3,000-5,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🍳</div>
+      <h4>Omurice</h4>
+      <p class="korean-name">오므라이스</p>
+      <p>אורז מטוגן עטוף בחביתה, מעוטר בקטשופ. ילדי קוריאה אוכלים זה כל יום.</p>
+      <span class="price">~8,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🥟</div>
+      <h4>Mandu</h4>
+      <p class="korean-name">만두</p>
+      <p>כופתאות מאודות או מטוגנות עם בשר וירקות. לא חריף.</p>
+      <span class="price">~6,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🍚</div>
+      <h4>Bibimbap</h4>
+      <p class="korean-name">비빔밥</p>
+      <p>המנה הלאומית! אורז עם ירקות, ביצה, בשר, ורוטב צ'ילי בצד. הילדים מערבבים בעצמם.</p>
+      <span class="price">10,000-15,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🥩</div>
+      <h4>Tonkatsu</h4>
+      <p class="korean-name">돈까스</p>
+      <p>שניצל חזיר מטוגן עם רוטב חום מתוק. הילדים יזהו את זה מיד.</p>
+      <span class="price">~12,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🍝</div>
+      <h4>Kalguksu</h4>
+      <p class="korean-name">칼국수</p>
+      <p>אטריות קמח חתוכות ביד במרק. לא חריף, מחמם, בטוח.</p>
+      <span class="price">~9,000 וון</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 3rem; font-size: 1.5rem; font-weight: 900;">🌟 חוויות חובה</h3>
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-emoji">🪙</div>
+      <h4>לחם 10 וון</h4>
+      <p class="korean-name">10원빵 · רק בגיונגג'ו!</p>
+      <p>מאפה גבינה ענק בצורת מטבע 10 וון. נמתח כשפותחים. הילדים מתפוצצים מצחוק.</p>
+      <span class="price">~3,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🥓</div>
+      <h4>Korean BBQ</h4>
+      <p class="korean-name">고기 구이</p>
+      <p>צולים בעצמכם על השולחן! Samgyeopsal (חזיר שמן) הכי בטוח לילדים. בג'ג'ו: Heuk-dwaeji (חזיר שחור).</p>
+      <span class="price">25,000-30,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🍧</div>
+      <h4>Bingsu</h4>
+      <p class="korean-name">빙수</p>
+      <p>הקינוח הלאומי! קרח מגולח דק עם חלב מרוכז, פירות, וסירופ. כמו שלג של ענקים.</p>
+      <span class="price">15,000-25,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🌶️</div>
+      <h4>Tteokbokki</h4>
+      <p class="korean-name">떡볶이</p>
+      <p>עוגות אורז גליליות ברוטב חריף מתוק. חריף קצת, אבל הילדים אוהבים. חטיף יומיומי בקוריאה.</p>
+      <span class="price">~6,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🥞</div>
+      <h4>Hotteok</h4>
+      <p class="korean-name">호떡</p>
+      <p>פנקייקים מטוגנים ממולאים בסוכר חום מומס + אגוזים. אוכל רחוב מטורף.</p>
+      <span class="price">1,500-2,000 וון</span>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🍗</div>
+      <h4>Chimaek</h4>
+      <p class="korean-name">치맥 · עוף + בירה</p>
+      <p>עוף מטוגן + בירה. שילוב לאומי. הילדים אוכלים את העוף, אתן את הבירה.</p>
+      <span class="price">~20,000 וון</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 3rem; font-size: 1.5rem; font-weight: 900;">⚠️ להיזהר!</h3>
+  <div class="food-grid">
+    <div class="food-card warn">
+      <div class="food-emoji">🩸</div>
+      <h4>Sundae</h4>
+      <p class="korean-name">순대</p>
+      <p>לא הקינוח! נקניקיית דם קוריאנית. מראה לא מזמין לילדים.</p>
+      <span class="price">דלגי</span>
+    </div>
+    <div class="food-card warn">
+      <div class="food-emoji">🐙</div>
+      <h4>Sannakji</h4>
+      <p class="korean-name">산낙지</p>
+      <p>תמנון חי קצוץ שזז על הצלחת. לא לילדים!</p>
+      <span class="price">דלגי</span>
+    </div>
+    <div class="food-card warn">
+      <div class="food-emoji">🐛</div>
+      <h4>Beondegi</h4>
+      <p class="korean-name">번데기</p>
+      <p>גלמי משי מבושלים. ריח חזק. הילדים יזכרו את זה כסיוט.</p>
+      <span class="price">דלגי</span>
+    </div>
+  </div>
+</section>
+
+<!-- Prep -->
+<section id="prep">
+  <h2>הכנות לפני הטיסה</h2>
+  <p class="section-korean">준비 · להכין הכל מראש</p>
+  
+  <div class="prep-grid">
+    <div class="prep-item">
+      <span class="icon">📱</span>
+      <div>
+        <h4>Naver Maps</h4>
+        <p>Google Maps לא עובד טוב לניווט רגלי בקוריאה. חובה להוריד.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🌐</span>
+      <div>
+        <h4>Papago</h4>
+        <p>אפליקציית התרגום הטובה ביותר לקוריאנית. עדיף על Google Translate.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🚖</span>
+      <div>
+        <h4>Kakao T</h4>
+        <p>להזמנת מוניות וואני Venti לקבוצה גדולה.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">📶</span>
+      <div>
+        <h4>eSIM / Pocket Wi-Fi</h4>
+        <p>אינטרנט חיוני. eSIM לכל מכשיר או Pocket Wi-Fi משותף.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">💳</span>
+      <div>
+        <h4>T-Money</h4>
+        <p>קונים בחנות נוחות בשדה. למטרו, אוטובוסים, ומוניות. טוענים במזומן.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🚄</span>
+      <div>
+        <h4>הזמנת KTX</h4>
+        <p>נפתח 30 יום מראש באתר Korail. ליום גיונגג'ו - להזמין ביום הפתיחה!</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🪪</span>
+      <div>
+        <h4>רישיון נהיגה בינלאומי</h4>
+        <p>חובה לג'ג'ו! בלי זה לא משכירים רכב.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🎢</span>
+      <div>
+        <h4>Lotte World Magic Pass</h4>
+        <p>חובה! בלי זה תעמדו 90 דקות לכל מתקן. הזמיני מראש באתר.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🚙</span>
+      <div>
+        <h4>Park 9.81 - סלוט בוקר</h4>
+        <p>פחות עמוס בבוקר. הזמיני מראש את הסלוט.</p>
+      </div>
+    </div>
+    <div class="prep-item">
+      <span class="icon">🚜</span>
+      <div>
+        <h4>סיור ג'יפים בג'ג'ו</h4>
+        <p>Jeju Offroad - חברה עם סיורים פרטיים. להזמין מראש.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Budget -->
+<section id="budget">
+  <h2>תקציב יומי</h2>
+  <p class="section-korean">예산 · משוער ל-7 נפשות</p>
+  
+  <div class="budget-card">
+    <div class="budget-row">
+      <span>🏠 לינה</span>
+      <span class="amount">1,500-1,800 ₪</span>
+    </div>
+    <div class="budget-row">
+      <span>🍜 אוכל</span>
+      <span class="amount">1,000-1,300 ₪</span>
+    </div>
+    <div class="budget-row">
+      <span>🚄 תחבורה</span>
+      <span class="amount">600-800 ₪</span>
+    </div>
+    <div class="budget-row">
+      <span>🎢 אטרקציות</span>
+      <span class="amount">500-700 ₪</span>
+    </div>
+    <div class="budget-row">
+      <span>🛍️ שונות וקניות</span>
+      <span class="amount">400-600 ₪</span>
+    </div>
+    <div class="budget-row">
+      <span>סה"כ ליום</span>
+      <span class="amount">4,000-5,200 ₪</span>
+    </div>
+  </div>
+  
+  <p style="margin-top: 1rem; color: var(--gray); font-size: 0.9rem; text-align: center;">
+    💡 ארוחה ממוצעת במסעדה מקומית: 70,000-100,000 וון | חזרה למס במקום: זכרו דרכון!
+  </p>
+</section>
+
+<!-- Open Items -->
+<section id="open">
+  <h2>נקודות פתוחות</h2>
+  <p class="section-korean">미정 · עוד להחליט</p>
+  
+  <div class="open-items">
+    <ol>
+      <li><strong>תאריכים מדויקים</strong> - לבחור בתוך טווח 14-28 באפריל 2027.</li>
+      <li><strong>טיסות בינלאומיות</strong> - ישיר vs קונקשן (דובאי / איסטנבול). הפרש של ~$8,000.</li>
+      <li><strong>DMZ?</strong> - הוחלט לוותר בינתיים. אם משתנה - יום 13 לגדולים בלבד.</li>
+      <li><strong>דירות ספציפיות</strong> - להזמין סביב ינואר-פברואר 2027.</li>
+      <li><strong>רישיון נהיגה בינלאומי</strong> - להוציא לפני הטיסה.</li>
+      <li><strong>ביטוח נסיעות + ויזות + חיסונים</strong> - לטפל סוף 2026.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <p class="korean-text">화이팅! 화이팅!</p>
+  <p>תוכנית בסיס - מאי 2026 · יתעדכן לקראת ינואר-פברואר 2027</p>
+  <p style="margin-top: 0.5rem;">✈️ קוריאה כאן אנחנו באים ✈️</p>
+</footer>
+
+<script>
+  // Days Data
+  const days = [
+    {
+      number: 1,
+      title: 'הנחיתה',
+      location: 'סיאול · נמל התעופה Incheon → דירה ב-Mapo-gu',
+      type: 'seoul',
+      activities: [
+        {
+          time: 'הגעה',
+          title: 'נחיתה ב-Incheon',
+          desc: 'ואן פרטי מוזמן מראש לדירה. עם 7 נפשות ומזוודות אסור להסתבך עם תחבורה ציבורית.',
+          tip: 'דירה ב-Yeonnam-dong / Mapo-gu - אזורים מערביים יותר, רגועים וטרנדיים. 5 דקות במונית מ-Hongdae.'
+        },
+        {
+          time: 'ערב',
+          title: '🏪 אתגר חנות הנוחות',
+          desc: 'בחנות CU או GS25 ליד הדירה. כל ילד מקבל 10,000 וון ובוחר ראמן + משקה + חטיף. הילדים מכינים את הראמן בעצמם במכונת המים הרותחים.',
+          tip: '⛔ אסור לחפש מסעדה - הג\'ט-לג יכריע. החנות היא חוויה תרבותית טהורה.'
+        }
+      ],
+      meals: [
+        { emoji: '✈️', text: '<strong>בוקר:</strong> במטוס' },
+        { emoji: '🏪', text: '<strong>ערב:</strong> חנות נוחות (CU/GS25) - אתגר ראמן, ~10,000 וון לאדם' }
+      ]
+    },
+    {
+      number: 2,
+      title: 'יום התאוששות + HiKR Ground',
+      location: 'סיאול · גמיש לפי כוח',
+      type: 'seoul',
+      activities: [
+        {
+          time: 'אופציה',
+          title: '✨ אין יעד בשעה מסוימת',
+          desc: 'הילדים יתעוררו ב-04:00, יחזרו לישון ב-09:00, יקרסו ב-15:00. ג\'ט-לג של 6 שעות. אתן זורמות איתם.',
+          tip: 'אם הילדים קמים מוקדם - הליכה ב-Hongdae בבוקר השקט. אם מאוחר - הישארו עד הצהריים.'
+        },
+        {
+          time: 'צהריים/אחה"צ',
+          title: '🎤 HiKR Ground - K-Pop Experience',
+          desc: 'בניין 5 קומות במרכז סיאול, מופעל ע"י משרד התיירות. כניסה חינמית. הילדים מצלמים את עצמם רוקדים על רקעי קליפי K-pop בגרין-סקרין, בובות שעוות של להקות, חוויות AR.',
+          tip: 'פתוח 11:00-21:00. אם הילדים קורסים אחרי שעה - יוצאות. אם בכיף - ממשיכות.'
+        }
+      ],
+      meals: [
+        { emoji: '☕', text: '<strong>בוקר:</strong> בית קפה ליד הדירה / Paris Baguette, ~7,000 וון לאדם' },
+        { emoji: '🍙', text: '<strong>צהריים:</strong> בונסיק ב-Myeongdong - גימבאפ + טוקבוקי + מנדו, ~10,000 וון לאדם' },
+        { emoji: '🏪', text: '<strong>ערב:</strong> חנות נוחות שנייה - הילדים כבר מתחילים להבין מה הם אוהבים, ~10,000 וון' }
+      ]
+    },
+    {
+      number: 3,
+      title: 'קוריאה הקלאסית',
+      location: 'סיאול · ארמון Gyeongbokgung + Bukchon',
+      type: 'seoul',
+      activities: [
+        {
+          time: '10:30-13:00',
+          title: '👘 ארמון Gyeongbokgung + הנבוק',
+          desc: 'הארמון הראשי של שושלת ג\'וסון (המאה ה-14). 40 מבנים בסגנון "דנצ\'ונג" - עץ צבוע בכחול-אדום-ירוק. השכרת הנבוק (בגד מסורתי) ב-15,000-25,000 וון לאדם.',
+          tip: '💡 עם הנבוק - כניסה חינמית לארמון! טקס חילופי המשמרות ב-10:00 וב-14:00.'
+        },
+        {
+          time: '13:00-14:00',
+          title: '🍚 ארוחת צהריים ב-Insadong',
+          desc: 'שכונה סמוכה עם מסעדות מסורתיות. הזמן הנכון לטעום ביבימבאפ - המנה הלאומית.'
+        },
+        {
+          time: '14:00-17:00',
+          title: '😴 שנ"צ בדירה',
+          desc: 'הג\'ט-לג עוד שם. חזרה לדירה למנוחה.',
+          tip: 'גם אם בא לכן להישאר בדירה לפיקניק - בסדר. Bukchon לא הולך לשום מקום.'
+        },
+        {
+          time: 'ערב (אופציונלי)',
+          title: '🏘️ Bukchon Hanok Village',
+          desc: 'שכונת בתים מסורתיים. אנשים גרים שם באמת. סמטאות צרות, גגות נוטים, רקע של גורדי שחקים.',
+          tip: '⚠️ אנשים גרים שם - שלטים מבקשים שקט. לא צועקים.'
+        }
+      ],
+      meals: [
+        { emoji: '🥐', text: '<strong>בוקר:</strong> בית קפה ליד הדירה / Tous Les Jours, ~7,000 וון' },
+        { emoji: '🍚', text: '<strong>צהריים:</strong> מסעדה ב-Insadong - <strong>ביבימבאפ!</strong> המנה הלאומית, ~12,000-15,000 וון' },
+        { emoji: '🍗', text: '<strong>ערב:</strong> Korean Fried Chicken במשלוח (BBQ Chicken / Kyochon), ~15,000 וון' }
+      ]
+    },
+    {
+      number: 4,
+      title: 'K-Pop Day',
+      location: 'סיאול · Myeongdong + Hongdae',
+      type: 'seoul',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '💄 Myeongdong + Olive Young',
+          desc: 'רובע הקניות והאוכל המסורתי הגדול בסיאול. רחוב ראשי + סמטאות צדדיות של דוכני אוכל רחוב. Olive Young = הסופר-סטור הקוסמטי הענק. K-Beauty במלוא הדרה.',
+          tip: 'אופציה אדירה למתבגרות שלך - הן יעופו על המקום.'
+        },
+        {
+          time: 'אחה"צ',
+          title: '🐑 בית קפה כבשים - Thanks Nature Cafe ב-Hongdae',
+          desc: 'בית קפה תמטי עם שתי כבשים אמיתיות בחצר חיצונית. הילדים מזמינים שתייה ומאכילים את הכבשים. אין צורך באנגלית - הילדים מתחברים מיד.',
+          tip: 'יש בתי קפה תמטיים אחרים: כלבים, חתולים, רקונים, מירקטים. תבחרי עם ביקורות חיוביות על תנאי החיות!'
+        },
+        {
+          time: 'ערב',
+          title: '🎵 שיטוט ב-Hongdae',
+          desc: 'שכונת הצעירים של סיאול. אחרי 17:00 הרחובות מתמלאים: מופעי רחוב של רקדנים צעירים שעושים אודישנים לחברות K-pop. תאי צילום "Life4Cuts" עם אביזרים מצחיקים. חנויות K-pop.',
+          tip: 'הילדים שלך יישארו שם לשעות. תכינו את עצמכם.'
+        }
+      ],
+      meals: [
+        { emoji: '🥪', text: '<strong>בוקר:</strong> Isaac Toast - טוסטים חמים על כיריים עם ביצה וגבינה. ~5,000 וון. הילדים יאהבו!' },
+        { emoji: '🌭', text: '<strong>צהריים:</strong> אוכל רחוב ב-Myeongdong - מאפי גבינה נמתחים, דגי דיונון, <strong>Hotteok!</strong> ~8,000-12,000 וון' },
+        { emoji: '🐑', text: '<strong>ערב:</strong> בבית הקפה - שתייה ומאפים. אחרי - דוכני Hongdae, ~10,000-15,000 וון' }
+      ]
+    },
+    {
+      number: 5,
+      title: 'גיחה לגיונגג\'ו',
+      location: 'סיאול → גיונגג\'ו → סיאול · KTX',
+      type: 'seoul',
+      activities: [
+        {
+          time: '09:00',
+          title: '🚄 KTX מסיאול',
+          desc: 'יציאה מ-Seoul Station ב-09:00. שעתיים נסיעה ל-Singyeongju. <strong>גיונגג\'ו = "המוזיאון ללא קירות"</strong> - בירת ממלכת Silla כמעט אלף שנה.',
+          tip: 'להזמין 30 יום מראש באתר Korail!'
+        },
+        {
+          time: '11:30-13:30',
+          title: '👑 Daereungwon - תלוליות הקבר',
+          desc: 'הוואו הוויזואלי הגדול. פארק ענק עם <strong>23 גבעות עשב ענקיות</strong> - קברי מלכים ומלכות של שילה. אפשר להיכנס לקבר Cheonmachong ולראות תכשיטי זהב מקוריים.'
+        },
+        {
+          time: '13:30-15:00',
+          title: '🪙 Hwangnidan-gil',
+          desc: 'הרחוב הטרנדי. בתי הנוק מסורתיים שהפכו לבתי קפה. <strong>חובה: לחם 10 וון (Munsibbang)</strong> - מאפה גבינה ענק בצורת מטבע, נמתח כשפותחים.',
+          tip: 'הילדים מתפוצצים מצחוק מהמתיחה. תצלמו וידאו!'
+        },
+        {
+          time: '15:00-17:00',
+          title: '🏯 Donggung Palace & Wolji Pond',
+          desc: 'ארמון משוחזר על אגם מלאכותי. ביום זה יפה, בלילה מדהים - אבל אנחנו נצא ב-17:00.'
+        },
+        {
+          time: '18:00',
+          title: '🚄 חזרה לסיאול',
+          desc: 'KTX מ-Singyeongju. הגעה לסיאול ב-20:00. ארוחת ערב באזור הדירה.'
+        }
+      ],
+      meals: [
+        { emoji: '🥐', text: '<strong>בוקר:</strong> בתחנת Seoul Station - Paris Baguette / סנדוויצ\'ים ברכבת, ~7,000 וון' },
+        { emoji: '🪙', text: '<strong>צהריים:</strong> ב-Hwangnidan-gil! <strong>לחם 10 וון</strong> + ביבימבאפ מקומי, ~12,000-15,000 וון' },
+        { emoji: '📦', text: '<strong>ערב:</strong> Dosirak (קופסת אוכל מחנות נוחות) ב-KTX - חוויה בפני עצמה! ~7,000 וון' }
+      ]
+    },
+    {
+      number: 6,
+      title: 'מעבר לג\'ג\'ו 🏝️',
+      location: 'Gimpo → Jeju · התמקמות',
+      type: 'jeju',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '✈️ טיסה לג\'ג\'ו',
+          desc: 'טיסה מ-Gimpo (השדה הפנימי של סיאול - לא Incheon!) לג\'ג\'ו. 50-60 דקות, יוצאות כל חצי שעה.',
+          tip: 'טיסה אופטימלית 11:00-12:00 - אין צורך לקום מוקדם.'
+        },
+        {
+          time: 'אחה"צ',
+          title: '🚐 איסוף הרכב + התמקמות',
+          desc: 'Kia Carnival 11 מושבים בשדה. וילה ב-Aewol (מערב-צפון) או Hamdeok (צפון-מזרח). הצפון יותר מרכזי לוגיסטית.',
+          tip: '⚠️ חובה: רישיון נהיגה בינלאומי + Naver Maps על הטלפון!'
+        },
+        {
+          time: 'אחה"צ-ערב',
+          title: '🏖️ חוף Hyeopjae (אופציונלי)',
+          desc: 'אם יש כוח ושמש - 15 דק\' נסיעה. חוף עם <strong>חולות לבנים, מים טורקיז, נוף לאי קטן (Biyangdo)</strong>. באפריל המים קרים מדי לשחייה, אבל הילדים יכולים לרוץ ולבנות.',
+          tip: 'יש בתי קפה על החוף עם נוף לים.'
+        }
+      ],
+      meals: [
+        { emoji: '🥐', text: '<strong>בוקר:</strong> Paris Baguette ב-Gimpo, ~7,000 וון' },
+        { emoji: '🥞', text: '<strong>צהריים:</strong> מסעדה ב-Aewol/Hyeopjae - Haemul Pajeon (פנקייק פירות ים), ~15,000 וון' },
+        { emoji: '🛒', text: '<strong>ערב:</strong> ארוחה ביתית בווילה! קניות בסופר (E-Mart) - אורז, ירקות, בשר לגריל, ~5,000-8,000 וון' }
+      ]
+    },
+    {
+      number: 7,
+      title: 'פארק 9.81 + מערת לבה',
+      location: 'ג\'ג\'ו · קארטינג + Manjanggul',
+      type: 'jeju',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '🏎️ Park 9.81 - קארטינג ללא מנוע!',
+          desc: 'השם בא ממהירות הנפילה החופשית של כדור הארץ. <strong>מכוניות שזורמות במורד גבעה מלאכותית באורך 1.8 ק"מ - רק בכוח הכבידה!</strong> 3 מסלולים ברמות קושי שונות.',
+          tip: 'גובה: 140+ ס"מ נוסע לבד. פחות = עם מבוגר. הזמיני סלוט בוקר!'
+        },
+        {
+          time: 'אחה"צ',
+          title: '🌋 מערת Manjanggul - מנהרת לבה',
+          desc: 'אחת ממנהרות הלבה הארוכות בעולם (7.4 ק"מ סך הכל). הקטע הפתוח: 1 ק"מ של הליכה תת-קרקעית. בסוף יש <strong>"עמוד הלבה" - הגדול בעולם מסוגו (7.6 מטר!)</strong>.',
+          tip: '🧥 חובה ג\'קטים! 12 מעלות קבועות בפנים גם אם בחוץ 22.'
+        }
+      ],
+      meals: [
+        { emoji: '🥯', text: '<strong>בוקר:</strong> בווילה - ארוחה מהקניות. ביצים, לחם, פירות, ~3,000 וון' },
+        { emoji: '🐖', text: '<strong>צהריים:</strong> <strong>Heuk-dwaeji!</strong> חזיר שחור של ג\'ג\'ו - המנה האייקונית. מסעדה: Don Sa Don, ~25,000-30,000 וון' },
+        { emoji: '🍜', text: '<strong>ערב:</strong> סופרמרקט + בישול בווילה, או חנות נוחות. ~5,000-8,000 וון' }
+      ]
+    },
+    {
+      number: 8,
+      title: 'הר Hallasan + בתי קפה',
+      location: 'ג\'ג\'ו · מסלול Yeongsil + Aewol',
+      type: 'jeju',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '⛰️ מסלול Yeongsil על Hallasan',
+          desc: 'Hallasan = הר הגעש המרכזי של ג\'ג\'ו (1,950 מ\' - ההר הגבוה בקוריאה הדרומית). <strong>הפיתרון החכם:</strong> Yeongsil Trail מתחיל בגובה 1,200 מ\' ועולה 3.7 ק"מ במעלה מתון על דק עץ. 80% מ"חוויית פסגה" עם 30% מהמאמץ!',
+          tip: 'נעלי הליכה (לא סנדלים), 1.5 ל\' מים לכל אחד, ג\'קט קל, חטיפים. 3.5-4.5 שעות סך הכל.'
+        },
+        {
+          time: 'אחה"צ',
+          title: '☕ Aewol Cafe Street',
+          desc: 'רצועת בתי קפה מיוחדים על הים. מבנים אדריכליים מודרניים, מרפסות מעל המים, קינוחים פוטוגניים. <strong>חובה: Bingsu - הקינוח הלאומי!</strong> קרח מגולח עם תוספות.',
+          tip: 'בתי קפה מומלצים: Bomnal Cafe (על הים), Aewol The Sunset (לשקיעה).'
+        }
+      ],
+      meals: [
+        { emoji: '🥪', text: '<strong>בוקר:</strong> בווילה - ארוחה גדולה לפני ההר. הכינו סנדוויצ\'ים למסלול! ~3,000 וון' },
+        { emoji: '⛰️', text: '<strong>צהריים:</strong> פיקניק בהר עם הסנדוויצ\'ים! או Kalguksu במסעדת הר, ~10,000 וון' },
+        { emoji: '🍧', text: '<strong>ערב:</strong> <strong>Bingsu בבית קפה Aewol!</strong> + Haemul Tang (מרק פירות ים חריף), ~20,000 וון' }
+      ]
+    },
+    {
+      number: 9,
+      title: 'ג\'יפים + חרוט וולקני',
+      location: 'ג\'ג\'ו · Jeju Offroad + Seongsan',
+      type: 'jeju',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '🚜 סיור ג\'יפים',
+          desc: 'ג\'יפים פתוחים בשבילי עפר - אזורים וולקניים, יערות, חופים נסתרים שאי אפשר להגיע אליהם ברכב רגיל. חברה מומלצת: <strong>Jeju Offroad</strong> עם סיורים פרטיים.',
+          tip: 'בגדים שאפשר ללכלך, שכבות (רוח), נעליים סגורות. סיור: 2-3 שעות.'
+        },
+        {
+          time: 'אחה"צ',
+          title: '🌋 Seongsan Ilchulbong - פסגת הזריחה',
+          desc: 'אחד הסמלים של ג\'ג\'ו. <strong>חרוט וולקני שמתרומם 180 מטר מתוך הים</strong>. נוצר לפני 5,000 שנה מהתפרצות תת-ימית. נראה כמו <strong>כתר אבן ירוק שיוצא מהמים</strong>.',
+          tip: 'טיפוס: 20-30 דק\' במדרגות עץ. אחה"צ עדיף - בבוקר עמוס בקבוצות.'
+        }
+      ],
+      meals: [
+        { emoji: '🥖', text: '<strong>בוקר:</strong> בווילה / חנות נוחות בדרך, ~5,000 וון' },
+        { emoji: '🐟', text: '<strong>צהריים:</strong> פירות ים ב-Seongsan! Hwe (דגים נא קוריאניים) או Jeonbok Juk (דייסת אבלון), ~20,000-25,000 וון' },
+        { emoji: '📦', text: '<strong>ערב:</strong> Dosirak מחנות נוחות + ראמן בווילה, ~5,000-7,000 וון' }
+      ]
+    },
+    {
+      number: 10,
+      title: 'Hamdeok Beach + Bijarim Forest',
+      location: 'ג\'ג\'ו · חוף + יער קסום',
+      type: 'jeju',
+      activities: [
+        {
+          time: '🌅',
+          title: 'בוקר - לישון',
+          desc: 'ארוחת בוקר ארוכה ורגועה בווילה. אין שעון לקום בשבילו.',
+          tip: 'אחרי 3 ימים אינטנסיביים, היום הזה רגוע יותר אבל לא ריק.'
+        },
+        {
+          time: '11:00',
+          title: '🏖️ חוף Hamdeok',
+          desc: 'החוף המשפחתי הכי טוב בצפון ג\'ג\'ו. יש שם <strong>לגונה רדודה</strong> שמתאימה במיוחד לילדים. מים טורקיז זוהרים בגלל החול הלבן והאלמוגים.',
+          tip: '🌉 סימן ההיכר: גשר עץ אדום קטן שחוצה את הלגונה. רגע אינסטגרמי קלאסי - הילדים יחצו עשרים פעם.'
+        },
+        {
+          time: 'מה עושים בחוף',
+          title: '🛶 פעילויות',
+          desc: '<strong>הקטנים</strong> בונים בחול ורצים בגאות (המים קרים מדי לטבילה באפריל, אבל רגליים בסדר).<br><strong>הגדולים</strong> מצלמים, יושבים על הסלעים.<br><strong>פיקניק</strong> על הדשא ליד החוף.<br><strong>קייאקים שקופים (Clear Kayak)</strong> - יש שם עמדה. ילדים מעל 7 יכולים. רואים את הקרקעית דרך הקיאק.'
+        },
+        {
+          time: '15:00',
+          title: '🌲 Bijarim Forest - היער הקסום',
+          desc: '20 דק\' נסיעה מ-Hamdeok. יער של <strong>2,800 עצי קטורת (Nutmeg Yew)</strong> - חלקם בני 500-800 שנה! מוגן כאוצר טבע לאומי קוריאני. מסלול מעגלי של <strong>2.8 ק"מ, שטוח לחלוטין</strong> על חצץ אדמדם של שברי בזלת. מוצל, קריר, שקט. ריח עצי קטורת.',
+          tip: 'כניסה: 3,000 וון מבוגר, 1,500 וון ילד. 1.5-2 שעות מספיק לסיבוב. נעלי הליכה רגילות, לא נעלי הרים. פתוח עד 18:00.'
+        }
+      ],
+      meals: [
+        { emoji: '🍳', text: '<strong>בוקר:</strong> בווילה, ארוחה ארוכה ורגועה, ~3,000 וון' },
+        { emoji: '🍧', text: '<strong>צהריים:</strong> בית קפה על חוף Hamdeok - <strong>Bingsu!</strong> + Black Pork Burger / סלטים, ~15,000 וון' },
+        { emoji: '🍜', text: '<strong>ערב:</strong> מסעדה מקומית ליד הווילה או בישול ביתי, ~10,000-15,000 וון' }
+      ]
+    },
+    {
+      number: 11,
+      title: 'יום גמיש + BBQ חגיגי 🥩',
+      location: 'ג\'ג\'ו · הלילה האחרון באי',
+      type: 'jeju',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '😴 לישון ולנוח',
+          desc: 'היום האחרון בג\'ג\'ו. בוקר חופשי לגמרי - שינה, ארוחת בוקר ארוכה, אריזה ראשונית.'
+        },
+        {
+          time: 'אחה"צ - אופציה א\'',
+          title: '🐶 Snoopy Garden',
+          desc: 'גן נושאי סנופי בטבע - שבילים מעוצבים, פסלים, בתי קפה תמטיים. מתאים לילדים הקטנים יותר ולמי שרוצה משהו רגוע.',
+          tip: 'כניסה: ~18,000 וון מבוגר, ~15,000 וון ילד. שעה-שעתיים מספיק.'
+        },
+        {
+          time: 'אחה"צ - אופציה ב\'',
+          title: '🌀 Kimnyoung Maze Park',
+          desc: 'מבוך אבן ענק בצורת האי ג\'ג\'ו. הילדים מתחרים מי יוצא ראשון. בכניסה יש גם חתולים.',
+          tip: 'כניסה: ~3,000 וון. קצר ומהנה - 30-45 דקות.'
+        },
+        {
+          time: 'אחה"צ - אופציה ג\'',
+          title: '🏖️ חוף נוסף',
+          desc: 'Woljeongri Beach (חוף עם בתי קפה צבעוניים) או חזרה ל-Hyeopjae / Hamdeok. לשבת, לשתות, ליהנות מהים בפעם אחרונה.',
+        },
+        {
+          time: 'ערב',
+          title: '🥩 BBQ ביתי חגיגי - סיום ג\'ג\'ו!',
+          desc: '<strong>Korean BBQ ביתי על המרפסת אם יש</strong> - קונים בשר טוב מהסופר (חזיר שחור Heuk-dwaeji או בקר מקומי), ירקות לגריל, יין/בירה לאמהות. <strong>חוויה משפחתית מסכמת.</strong> עולה כמו ארוחה במסעדה אבל הרבה יותר אינטימי.',
+          tip: '💡 חלופה ליום גשם: Aqua Planet Jeju (אקווריום) - מפעיל את כל היום במקום.'
+        }
+      ],
+      meals: [
+        { emoji: '🍳', text: '<strong>בוקר:</strong> בווילה - להריק את המקרר. ארוחה חופשית, ~3,000 וון' },
+        { emoji: '☕', text: '<strong>צהריים:</strong> בית קפה / מסעדה ליד הפעילות שנבחרה, ~12,000-15,000 וון' },
+        { emoji: '🥩', text: '<strong>ערב:</strong> <strong>Korean BBQ ביתי במרפסת!</strong> חזיר שחור מהסופר, ירקות, יין - חוויה משפחתית מסכמת, ~10,000-15,000 וון' }
+      ]
+    },
+    {
+      number: 12,
+      title: 'Lotte World 🎢',
+      location: 'סיאול · Jamsil (חזרה מג\'ג\'ו)',
+      type: 'seoul',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '✈️ טיסה מג\'ג\'ו לסיאול',
+          desc: 'החזרת הרכב בשדה התעופה של ג\'ג\'ו, טיסה ל-Gimpo (50 דק\'). מ-Gimpo - ישר ל-Lotte World באזור Jamsil.',
+          tip: 'טיסה מוקדמת (08:00-09:00) כדי להגיע ל-Lotte עד 11:00.'
+        },
+        {
+          time: '11:00',
+          title: '🎢 הגעה ל-Lotte World',
+          desc: 'פארק שעשועים ענק. שתי גרסאות באותו מתחם: <strong>Adventure</strong> (פארק שעשועים מקורה הכי גדול בעולם!) + <strong>Magic Island</strong> (חלק פתוח על אגם, האוסטרים האדרנליניים).',
+          tip: '⚠️ חובה Magic Pass! בלי זה תעמדו 90 דקות לכל מתקן. יקר אבל שווה כל אגורה.'
+        },
+        {
+          time: 'צהריים',
+          title: 'Adventure - החלק המקורה',
+          desc: 'Magic Castle (השיא הנוסטלגי לקוריאנים), קרוסלות, רכבות שדים, Conquistador (מטוטלת ענקית).'
+        },
+        {
+          time: 'צהריים',
+          title: '🍱 ארוחה ארוכה במסעדה',
+          desc: 'הפארק גדול - אפשר לשבת לארוחה, להחליף נעליים, להוריד הילד הקטן לחצי שעה של "כלום". אין צורך לחזור לדירה.'
+        },
+        {
+          time: 'אחה"צ',
+          title: 'Magic Island - האדרנלין',
+          desc: 'החלק הפתוח, האוסטרים האדרנליניים: Atlantis, Gyro Drop (נפילה חופשית).',
+          tip: '👗 השכרת מדי בית ספר קוריאניים בחנויות מסביב לפארק - טרנד ענק! נראה מסדרות K-drama.'
+        }
+      ],
+      meals: [
+        { emoji: '🥐', text: '<strong>בוקר:</strong> בשדה התעופה של ג\'ג\'ו / Paris Baguette, ~7,000 וון' },
+        { emoji: '🍱', text: '<strong>צהריים:</strong> בתוך Lotte World - מסעדות מגוונות. ~15,000 וון' },
+        { emoji: '🥩', text: '<strong>ערב:</strong> <strong>Korean BBQ באזור Jamsil!</strong> Samgyeopsal (חזיר שמן) הכי בטוח לילדים. ~25,000-30,000 וון' }
+      ]
+    },
+    {
+      number: 13,
+      title: 'Namdaemun + COEX + Gwangjang',
+      location: 'סיאול · קניות + שווקים',
+      type: 'seoul',
+      activities: [
+        {
+          time: '10:00-13:00',
+          title: '🛍️ שוק Namdaemun - קניות אחרונות',
+          desc: 'השוק הגדול בסיאול (מאז 1414!). 10,000 חנויות. <strong>הזמן הנכון לקניות אחרונות לפני הטיסה:</strong> בגדי ילדים (זול ואיכותי בצורה מוזרה, איזורים 6-7), מזכרות (אזור G), כלי מטבח (אזור D), קוסמטיקה.',
+          tip: '💡 חובה: דרכון לכל קנייה גדולה - יש Tax Free Refund על קניות מעל 30,000 וון בחנויות מסומנות. מקבלים החזר בשדה לפני הטיסה.'
+        },
+        {
+          time: 'בשוק',
+          title: '🍢 ארוחה בשוק תוך כדי',
+          desc: 'דוכני אוכל זולים: <strong>Galchi Jorim Alley</strong> (סמטת דגי החרב המבושלים - 갈치조림 골목), <strong>Hairtail Stew</strong> מסעדות, פנקייקים מטוגנים, גלידות מטורפות.'
+        },
+        {
+          time: '14:00-16:00',
+          title: '📚 ספריית Starfield COEX',
+          desc: 'אחת הספריות הויזואליות המרהיבות בעולם - <strong>2 קומות, 50,000 ספרים, מדפים בגובה 13 מטר</strong> בלב קניון COEX. כניסה חינמית. הילדים יתפעלו מהארכיטקטורה.',
+          tip: 'קו מטרו 2, תחנת Samseong, יציאה 5/6 - הספרייה ממש בכניסה לקניון. רגע אינסטגרמי קלאסי לבנות הגדולות.'
+        },
+        {
+          time: '17:00-20:00',
+          title: '🥞 שוק Gwangjang - האייקון',
+          desc: 'השוק המסורתי הוותיק בסיאול (פועל מאז 1905!). אזור מקורה ענק של דוכני אוכל. <strong>זה לא שוק תיירים - זה השוק שקוריאנים אוכלים בו.</strong> אווירה חושית עוצמתית - ריחות, צבעים, דוכנים שמכינים מולך.',
+          tip: 'קו מטרו 1, תחנת Jongno 5-ga, יציאה 8.'
+        },
+        {
+          time: 'חובה לטעום',
+          title: '😋 המנות האייקוניות של השוק',
+          desc: '<strong>Bindaetteok (빈대떡)</strong> - פנקייק שעועית ירוקה מטוגן - האייקון של השוק.<br><strong>Mayak Gimbap (마약김밥)</strong> - "גימבאפ סם" קטן ומכור.<br><strong>Kalguksu (칼국수)</strong> - אטריות קמח חתוכות ביד במרק.<br><strong>Tteokbokki (떡볶이)</strong> - עוגות אורז ברוטב חריף מתוק.',
+          tip: '⚠️ להיזהר: Yukhoe (טרטר בקר חי), Sundae (נקניקיית דם) - לא לילדים. השוק יציע - אתן בוחרות.'
+        },
+        {
+          time: 'חלופות',
+          title: '🌀 אם לא מתאים',
+          desc: 'במקום COEX: <strong>Hongdae לסיכום</strong> (אם הילדים רוצים עוד מופעי רחוב) · <strong>HYBE Insight</strong> (מוזיאון BTS - לחובבים) · <strong>בית קפה תמטי שני</strong> (אם הילדים אהבו את הראשון).'
+        }
+      ],
+      meals: [
+        { emoji: '🍢', text: '<strong>בוקר/צהריים:</strong> דוכני אוכל בשוק Namdaemun - Hairtail Stew / טוקבוקי / פנקייקים, ~10,000 וון' },
+        { emoji: '☕', text: '<strong>אחה"צ:</strong> בית קפה ב-COEX, ~7,000 וון' },
+        { emoji: '🥞', text: '<strong>ערב:</strong> <strong>שוק Gwangjang!</strong> Bindaetteok + Mayak Gimbap + Kalguksu, ~8,000-12,000 וון. זאת ארוחת הערב.' }
+      ]
+    },
+    {
+      number: 14,
+      title: 'N Tower + חזרה הביתה',
+      location: 'סיאול · N Tower + טיסה הביתה',
+      type: 'seoul',
+      activities: [
+        {
+          time: 'בוקר',
+          title: '☕ בוקר רגוע + אריזה',
+          desc: 'ארוחת בוקר ארוכה, אריזת מזוודות, צ\'ק-אאוט מהדירה. משאירים מזוודות ב-lobby או במטען.'
+        },
+        {
+          time: '10:00-12:00',
+          title: '🗼 N Seoul Tower',
+          desc: 'מגדל התצפית הסמלי של סיאול - 236 מ\' מעל הר Namsan. הסמל הוויזואלי של סיאול, מופיע בכל סדרת K-drama. מקו מטרו 4 (תחנת Myeongdong, יציאה 3) ואז <strong>Namsan Cable Car</strong> - 7 דק\' עלייה דרמטית מעל היער.',
+          tip: '💡 תצפית 360° מקומה 4 - ביום בהיר רואים עד הרי צפון קוריאה!'
+        },
+        {
+          time: 'בזמן הביקור',
+          title: '🔒 מנעולי האהבה',
+          desc: 'גדרות מכוסות במאות אלפי מנעולים שזוגות הצמידו עם משאלות. <strong>הילדים יאהבו</strong> - אפשר לקנות מנעול בחנות הסמוכה, לכתוב משאלה, להצמיד.',
+          tip: 'מנעול: 5,000-10,000 וון. הפעילות האחרונה בטיול - רגע מסכם יפה.'
+        },
+        {
+          time: 'אחה"צ',
+          title: '🚆 ל-Incheon Airport',
+          desc: 'אם ב-Gongdeok - AREX (רכבת מהירה לשדה, 45 דק\'). אחרת ואן פרטי.',
+          tip: 'להגיע לשדה 3 שעות לפני הטיסה - Tax Refund + קניות אחרונות בדיוטי פרי.'
+        },
+        {
+          time: 'ערב/לילה',
+          title: '✈️ טיסה הביתה',
+          desc: '안녕 코리아! גם בשדה התעופה יש מסעדות קוריאניות טובות לארוחה אחרונה.',
+          tip: '💝 כתבו לעצמכם הודעה: מה הכי זכרתם? מה תרצו בפעם הבאה?'
+        }
+      ],
+      meals: [
+        { emoji: '🥐', text: '<strong>בוקר:</strong> Paris Baguette ליד הדירה, ~7,000 וון' },
+        { emoji: '🍚', text: '<strong>צהריים:</strong> Incheon Airport - <strong>ביבימבאפ אחרון!</strong> ~15,000-20,000 וון' },
+        { emoji: '✈️', text: '<strong>ערב:</strong> במטוס' }
+      ]
+    }
+  ];
+
+  // Render days
+  const timeline = document.getElementById('timeline');
+  days.forEach((day, idx) => {
+    const card = document.createElement('div');
+    card.className = `day-card ${day.type === 'jeju' ? 'jeju' : ''}`;
+    
+    let activitiesHTML = '';
+    day.activities.forEach(act => {
+      activitiesHTML += `
+        <div class="activity-block">
+          <h4>${act.time ? `${act.time} · ` : ''}${act.title}</h4>
+          <p>${act.desc}</p>
+          ${act.tip ? `<div class="tip">💡 ${act.tip}</div>` : ''}
+        </div>
+      `;
+    });
+
+    let mealsHTML = '';
+    if (day.meals && day.meals.length) {
+      mealsHTML = `
+        <div class="meals">
+          <h4>🍽️ ארוחות</h4>
+          ${day.meals.map(m => `
+            <div class="meal-item">
+              <span class="meal-emoji">${m.emoji}</span>
+              <span class="meal-text">${m.text}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    card.innerHTML = `
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-number">${day.number}</div>
+        <div class="day-title">
+          <h3>${day.title}</h3>
+          <div class="location">${day.location}</div>
+        </div>
+        <div class="day-toggle">▼</div>
+      </div>
+      <div class="day-content">
+        <div class="day-content-inner">
+          ${activitiesHTML}
+          ${mealsHTML}
+        </div>
+      </div>
+    `;
+    timeline.appendChild(card);
+  });
+
+  // Toggle day
+  function toggleDay(header) {
+    header.parentElement.classList.toggle('open');
+  }
+
+  // Scroll to section
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // Countdown
+  function updateCountdown() {
+    const target = new Date('2027-04-15T00:00:00');
+    const now = new Date();
+    const diff = target - now;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById('days').textContent = days > 0 ? days : '🎉';
+  }
+  updateCountdown();
+
+  // Auto-open day 1
+  setTimeout(() => {
+    const firstDay = document.querySelector('.day-card');
+    if (firstDay) firstDay.classList.add('open');
+  }, 500);
+</script>
+
+</body>
+</html>
